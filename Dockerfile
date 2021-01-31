@@ -25,10 +25,10 @@ RUN cd /tmp/ && \
  	
 # Install cellranger
 RUN cd /opt/ && \
-	wget http://regmedsrv1.wustl.edu/Public_SPACE/litd/Public_html/pkg/cellranger-4.0.0.tar.gz && \	
-	tar -xzvf cellranger-4.0.0.tar.gz && \
-	rm -f cellranger-4.0.0.tar.gz
+	wget http://regmedsrv1.wustl.edu/Public_SPACE/litd/Public_html/pkg/cellranger-5.0.1.tar.gz && \	
+	tar -xzvf cellranger-5.0.1.tar.gz && \
+	rm -f cellranger-5.0.1.tar.gz
 
 # path
-ENV PATH /opt/cellranger-4.0.0:$PATH
+ENV PATH /opt/cellranger-5.0.1:$PATH
 
