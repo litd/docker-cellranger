@@ -4,4 +4,4 @@ CentOS 8
 
 bcl2fastq2 v2.20 (08/30/2017)
 
-cellranger v6.0.0 (03/02/2021)
+cellranger v6.1.1 (08/12/2021)
