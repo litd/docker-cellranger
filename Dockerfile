@@ -8,6 +8,10 @@ FROM centos:8
 # File Author / Maintainer
 MAINTAINER Tiandao Li <litd99@gmail.com>
 
+# centos end of life (EOL)
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-Linux-*
+
 # Install some utilities
 RUN yum install -y \
 	file \
@@ -25,10 +29,10 @@ RUN cd /tmp/ && \
  	
 # Install cellranger
 RUN cd /opt/ && \
-	wget http://regmedsrv1.wustl.edu/Public_SPACE/litd/Public_html/pkg/cellranger-6.1.1.tar.gz && \	
-	tar -xzvf cellranger-6.1.1.tar.gz && \
-	rm -f cellranger-6.1.1.tar.gz
+	wget http://regmedsrv1.wustl.edu/Public_SPACE/litd/Public_html/pkg/cellranger-7.1.0.tar.gz && \	
+	tar -xzvf cellranger-7.1.0.tar.gz && \
+	rm -f cellranger-7.1.0.tar.gz
 
 # path
-ENV PATH /opt/cellranger-6.1.1:$PATH
+ENV PATH /opt/cellranger-7.1.0:$PATH
 
