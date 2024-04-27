@@ -23,16 +23,16 @@ RUN yum install -y \
 
 # Install bcl2fastq
 RUN cd /tmp/ && \
-	wget http://regmedsrv1.wustl.edu/Public_SPACE/litd/Public_html/pkg/bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm && \
+	wget --no-check-certificate https://regmedsrv1.wustl.edu/Public_SPACE/litd/Public_html/pkg/bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm && \
 	yum -y --nogpgcheck localinstall bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm && \
 	rm -rf bcl2fastq2-v2.20.0.422-Linux-x86_64.rpm
- 	
+
 # Install cellranger
 RUN cd /opt/ && \
-	wget http://regmedsrv1.wustl.edu/Public_SPACE/litd/Public_html/pkg/cellranger-7.2.0.tar.gz && \	
-	tar -xzvf cellranger-7.2.0.tar.gz && \
-	rm -f cellranger-7.2.0.tar.gz
+	wget --no-check-certificate https://regmedsrv1.wustl.edu/Public_SPACE/litd/Public_html/pkg/cellranger-8.0.0.tar.gz && \
+	tar -xzvf cellranger-8.0.0.tar.gz && \
+	rm -f cellranger-8.0.0.tar.gz
 
 # path
-ENV PATH /opt/cellranger-7.2.0:$PATH
+ENV PATH /opt/cellranger-8.0.0:$PATH
 
