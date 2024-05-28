@@ -29,10 +29,10 @@ RUN cd /tmp/ && \
 
 # Install cellranger
 RUN cd /opt/ && \
-	wget --no-check-certificate https://regmedsrv1.wustl.edu/Public_SPACE/litd/Public_html/pkg/cellranger-8.0.0.tar.gz && \
-	tar -xzvf cellranger-8.0.0.tar.gz && \
-	rm -f cellranger-8.0.0.tar.gz
+	wget --no-check-certificate https://regmedsrv1.wustl.edu/Public_SPACE/litd/Public_html/pkg/cellranger-8.0.1.tar.gz && \
+	tar -xzvf cellranger-8.0.1.tar.gz && \
+	rm -f cellranger-8.0.1.tar.gz
 
 # path
-ENV PATH /opt/cellranger-8.0.0:$PATH
+ENV PATH /opt/cellranger-8.0.1:$PATH
 
